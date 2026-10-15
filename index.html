@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ольге Васильевне — 60 лет!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#ff1493; --cyan:#00ffff; --lime:#b6ff00; --yellow:#fff000;
+  --purple:#8a2be2; --black:#090414; --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black); color:#fff; font-family:Montserrat,Arial,sans-serif;
+  overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.12;
+  background:repeating-linear-gradient(0deg,transparent 0 3px,#fff 4px 5px);
+  mix-blend-mode:overlay;
+}
+body:after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:19;opacity:.13;
+  background-image:linear-gradient(90deg,transparent 49%,rgba(0,255,255,.4) 50%,transparent 51%);
+  background-size:7px 100%;
+}
+section{position:relative;padding:90px 20px;overflow:hidden}
+.container{max-width:980px;margin:auto;position:relative;z-index:2}
+.pixel{font-family:"Press Start 2P",monospace;line-height:1.7}
+.kicker{font-size:11px;letter-spacing:3px;color:var(--cyan);margin-bottom:18px}
+h2{font-size:clamp(32px,7vw,70px);line-height:1.05;text-transform:uppercase;text-shadow:5px 5px 0 var(--purple)}
+p{line-height:1.65}
+.btn{
+  display:inline-block;padding:17px 24px;border:3px solid #fff;color:#fff;text-decoration:none;
+  font-weight:900;text-transform:uppercase;background:var(--pink);
+  box-shadow:7px 7px 0 var(--cyan);transition:.15s;cursor:pointer
+}
+.btn:hover{transform:translate(4px,4px);box-shadow:3px 3px 0 var(--cyan)}
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,20,147,.5),transparent 25%),
+    radial-gradient(circle at 80% 70%,rgba(0,255,255,.35),transparent 28%),
+    linear-gradient(135deg,#130021,#08000e 55%,#160018);
+}
+.hero .grid{
+  position:absolute;inset:0;opacity:.22;
+  background-image:linear-gradient(rgba(0,255,255,.4) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,255,.4) 1px,transparent 1px);
+  background-size:45px 45px;
+  transform:perspective(500px) rotateX(58deg) scale(1.6);transform-origin:center bottom;
+}
+.hero-card{position:relative;max-width:850px}
+.hero .kicker{color:var(--yellow)}
+.hero h1{
+  font-size:clamp(45px,11vw,115px);line-height:.9;text-transform:uppercase;
+  color:var(--yellow);text-shadow:8px 8px 0 var(--pink),-4px -4px 0 var(--cyan);
+  margin-bottom:25px;
+}
+.hero .age{
+  font-size:clamp(90px,22vw,210px);font-weight:900;line-height:.75;color:#fff;
+  text-shadow:10px 10px 0 var(--purple),-5px -5px 0 var(--cyan);
+}
+.hero .subtitle{
+  font-size:clamp(20px,4vw,38px);font-weight:900;color:var(--lime);
+  margin:28px 0 38px;text-transform:uppercase;letter-spacing:2px
+}
+.hero .btn{margin-top:8px}
+.sticker{
+  position:absolute;font-weight:900;font-size:12px;padding:9px 12px;border:3px solid #111;
+  color:#111;transform:rotate(-7deg);box-shadow:5px 5px 0 #111
+}
+.s1{top:7%;left:-5%;background:var(--lime)}
+.s2{bottom:12%;right:-5%;background:var(--cyan);transform:rotate(7deg)}
+.intro{background:var(--pink);color:#111}
+.intro:before,.dress:before{
+  content:"";position:absolute;inset:0;opacity:.12;
+  background-image:radial-gradient(#111 1px,transparent 1px);background-size:13px 13px
+}
+.intro h2{color:#fff;text-shadow:5px 5px 0 #111}
+.intro .lead{font-size:clamp(24px,4vw,42px);font-weight:900;margin:25px 0}
+.intro .box{border:5px solid #111;padding:25px;box-shadow:10px 10px 0 #111;max-width:800px}
+.date{background:var(--cyan);color:#111;text-align:center}
+.date h2{color:#fff;text-shadow:5px 5px 0 var(--purple)}
+.date-number{font-size:clamp(100px,25vw,230px);font-weight:900;line-height:.85;color:var(--pink);text-shadow:8px 8px 0 #111}
+.date-month{font-size:clamp(24px,6vw,52px);font-weight:900;letter-spacing:4px;margin:20px 0}
+.date-year{font-family:"Press Start 2P";font-size:15px;background:#111;color:var(--yellow);display:inline-block;padding:12px}
+.location{background:#160021}
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:stretch;margin-top:40px}
+.card{
+  border:4px solid var(--cyan);padding:28px;background:rgba(0,0,0,.35);
+  box-shadow:10px 10px 0 var(--pink)
+}
+.card h3{color:var(--yellow);font-size:18px;margin-bottom:14px;text-transform:uppercase}
+.address{font-size:25px;font-weight:800;line-height:1.35}
+.time{font-family:"Press Start 2P";font-size:25px;color:var(--lime);margin-top:18px}
+.dress{background:var(--yellow);color:#111}
+.dress h2{color:#111;text-shadow:5px 5px 0 var(--pink)}
+.dress-main{
+  font-size:clamp(35px,8vw,80px);font-weight:900;line-height:.95;
+  color:var(--purple);text-shadow:4px 4px 0 #fff;margin:30px 0
+}
+.tags{display:flex;flex-wrap:wrap;gap:12px}
+.tag{padding:12px 16px;background:#111;color:#fff;font-weight:900;transform:rotate(var(--r))}
+.program{background:#0a0a16}
+.program-list{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:35px}
+.program-item{border:3px solid var(--pink);padding:22px;font-size:18px;font-weight:800;background:#13001f}
+.program-item:nth-child(2n){border-color:var(--cyan)}
+.program-item:nth-child(3n){border-color:var(--lime)}
+.rsvp{background:linear-gradient(135deg,var(--purple),#23003b)}
+.form{
+  max-width:720px;margin:35px auto 0;background:#090414;border:4px solid #fff;
+  padding:28px;box-shadow:12px 12px 0 var(--cyan)
+}
+.form-row{margin-bottom:22px}
+label{display:block;font-weight:800;margin-bottom:9px}
+input,select,textarea{
+  width:100%;padding:15px;background:#fff;color:#111;border:3px solid var(--pink);
+  font:inherit;font-weight:600;border-radius:0
+}
+textarea{min-height:110px;resize:vertical}
+.radio-row{display:flex;gap:18px;flex-wrap:wrap}
+.radio{
+  display:flex;align-items:center;gap:8px;border:2px solid var(--cyan);padding:12px 15px;cursor:pointer
+}
+.radio input{width:auto}
+.form .btn{border-color:#fff;width:100%;margin-top:5px}
+.note{font-size:12px;opacity:.8;margin-top:12px;text-align:center}
+.success{display:none;text-align:center;padding:25px;border:3px solid var(--lime);color:var(--lime);font-weight:900;margin-top:20px}
+.footer{text-align:center;background:#050208;padding:70px 20px}
+.footer .big{font-size:clamp(35px,8vw,80px);font-weight:900;color:var(--pink);text-shadow:5px 5px 0 var(--cyan)}
+.footer .sixty{font-size:100px;font-weight:900;color:var(--yellow);line-height:1}
+.back{display:inline-block;margin-top:35px;color:#fff;text-decoration:none;font-weight:900}
+@media(max-width:700px){
+  section{padding:70px 16px}
+  .location-grid,.program-list{grid-template-columns:1fr}
+  .s1{left:0}.s2{right:0}
+  .card{box-shadow:6px 6px 0 var(--pink)}
+  .form{padding:20px;box-shadow:7px 7px 0 var(--cyan)}
+}
+</style>
+</head>
+<body>
+
+<section class="hero" id="top">
+  <div class="grid"></div>
+  <div class="hero-card">
+    <div class="sticker s1">ПРАЗДНИК!</div>
+    <div class="sticker s2">60 — НОВЫЙ УРОВЕНЬ</div>
+    <div class="kicker pixel">ПРАЗДНИЧНОЕ ПРИГЛАШЕНИЕ</div>
+    <h1>ОЛЬГА<br>ВАСИЛЬЕВНА</h1>
+    <div class="age">60</div>
+    <div class="subtitle">НАЗАД В 80-Е И 90-Е</div>
+    <a class="btn" href="#invite">▶ ОТКРЫТЬ ПРИГЛАШЕНИЕ</a>
+  </div>
+</section>
+
+<section class="intro" id="invite">
+  <div class="container">
+    <div class="kicker">ДОРОГИЕ РОДНЫЕ И ДРУЗЬЯ</div>
+    <h2>У МЕНЯ<br>ЮБИЛЕЙ!</h2>
+    <p class="lead">И мы возвращаемся в 80-е и 90-е!</p>
+    <div class="box">
+      <p>Вспомним музыку, яркие наряды, кассеты, танцы и ту самую атмосферу, когда вечеринки были громкими, а фотографии — на плёнку.</p>
+      <br>
+      <p><strong>Приходите праздновать мои 60 лет вместе со мной!</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="date">
+  <div class="container">
+    <div class="kicker" style="color:#111">СОХРАНИТЕ ЭТУ ДАТУ</div>
+    <h2>11 НОЯБРЯ</h2>
+    <div class="date-number">11</div>
+    <div class="date-month">НОЯБРЯ</div>
+    <div class="date-year">2026</div>
+  </div>
+</section>
+
+<section class="location">
+  <div class="container">
+    <div class="kicker">МЕСТО И ВРЕМЯ</div>
+    <h2>ГДЕ И КОГДА?</h2>
+    <div class="location-grid">
+      <div class="card">
+        <h3>🏠 МЕСТО ПРАЗДНИКА</h3>
+        <div class="address">Курган,<br>Машиностроительный переулок, 67</div>
+        <p style="margin-top:15px">Празднуем дома у именинницы ❤️</p>
+      </div>
+      <div class="card">
+        <h3>⏰ СБОР ГОСТЕЙ</h3>
+        <div class="time">15:00</div>
+        <p style="margin-top:18px">Очень ждём вас к началу праздника!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dress">
+  <div class="container">
+    <div class="kicker" style="color:#111">ДРЕСС-КОД</div>
+    <h2>ВОЗВРАЩАЕМСЯ<br>В ПРОШЛОЕ</h2>
+    <div class="dress-main">80-Е / 90-Е</div>
+    <div class="tags">
+      <span class="tag" style="--r:-2deg">КИСЛОТНЫЙ</span>
+      <span class="tag" style="--r:3deg">ЯРКИЙ</span>
+      <span class="tag" style="--r:-4deg">НЕОНОВЫЙ</span>
+      <span class="tag" style="--r:2deg">СПОРТИВНЫЙ</span>
+      <span class="tag" style="--r:-3deg">ДЕРЗКИЙ</span>
+    </div>
+    <p style="font-size:24px;font-weight:900;margin-top:30px">НЕ БОИМСЯ ПЕРЕБОРЩИТЬ. 💿</p>
+  </div>
+</section>
+
+<section class="program">
+  <div class="container">
+    <div class="kicker">ПРОГРАММА ПРАЗДНИКА</div>
+    <h2>ЧТО НАС<br>ЖДЁТ?</h2>
+    <div class="program-list">
+      <div class="program-item">🎂 60 — юбилей именинницы</div>
+      <div class="program-item">🥂 Праздничный стол</div>
+      <div class="program-item">🎤 Поздравления и сюрпризы</div>
+      <div class="program-item">💃 Танцы под музыку 80–90-х</div>
+      <div class="program-item">📼 Ностальгия по любимым временам</div>
+      <div class="program-item">🎉 И всё, что мы ещё придумаем!</div>
+    </div>
+  </div>
+</section>
+
+<section class="rsvp" id="rsvp">
+  <div class="container">
+    <div class="kicker">ПОДТВЕРЖДЕНИЕ ПРИСУТСТВИЯ</div>
+    <h2>ТЫ С НАМИ?</h2>
+    <p style="font-size:20px;margin-top:20px">Пожалуйста, сообщи, придёшь ли ты на праздник. Это поможет всё подготовить ❤️</p>
+    <p style="font-size:18px;font-weight:900;color:var(--yellow);margin-top:12px">Сбор гостей — 15:00</p>
+
+    <form class="form" id="rsvpForm">
+      <div class="form-row">
+        <label for="name">Как тебя зовут?</label>
+        <input id="name" name="name" required placeholder="Имя и фамилия">
+      </div>
+
+      <div class="form-row">
+        <label>Будешь на празднике?</label>
+        <div class="radio-row">
+          <label class="radio"><input type="radio" name="attendance" value="Буду" required> Да, буду! 🎉</label>
+          <label class="radio"><input type="radio" name="attendance" value="Не смогу"> Не смогу 😢</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="guests">Придёшь один / одна?</label>
+        <select id="guests" name="guests">
+          <option>Один / одна</option>
+          <option>Буду с +1</option>
+          <option>Пока не знаю</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="drink">Предпочтения по напиткам</label>
+        <select id="drink" name="drink">
+          <option>🥂 Шампанское</option>
+          <option>🍷 Вино</option>
+          <option>🥃 Крепкие напитки</option>
+          <option>🧃 Безалкогольные</option>
+          <option>✨ Доверюсь организаторам</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="food">Есть ли пожелания по еде?</label>
+        <textarea id="food" name="food" placeholder="Аллергии, предпочтения или просто «всё ем»"></textarea>
+      </div>
+
+      <button class="btn" type="submit">ОТПРАВИТЬ ОТВЕТ</button>
+      <div class="note">Ответ отправится организатору после подключения уведомлений.</div>
+      <div class="success" id="success">🎉 СПАСИБО! ОТВЕТ ПОЛУЧЕН.<br>БУДЕМ ЖДАТЬ ТЕБЯ!</div>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="big">ДО ВСТРЕЧИ<br>НА ПРАЗДНИКЕ</div>
+  <div class="sixty">60</div>
+  <p style="font-size:22px;font-weight:900;margin-top:15px">БУДЕМ ЖДАТЬ!</p>
+  <p style="margin-top:25px">11 ноября 2026 · сбор гостей в 15:00 · Курган</p>
+  <p style="margin-top:12px;color:var(--yellow)">60 — это не возраст. Это новый уровень! ✨</p>
+  <a class="back" href="#top">↻ ВЕРНУТЬСЯ В НАЧАЛО</a>
+</footer>
+
+<script>
+document.getElementById('rsvpForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('success').style.display='block';
+  this.querySelector('button').style.display='none';
+  this.querySelector('.note').style.display='none';
+  document.getElementById('success').scrollIntoView({behavior:'smooth',block:'center'});
+});
+</script>
+</body>
+</html>
